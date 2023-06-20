@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+
+@keyframes letter-anim {
+    0% {
+        color: #3455eb;
+    }
+    33% {
+        color: #aa32fa;
+    }
+    66% {
+        color: #fa3271;
+    }
+    100% {
+        color: #3455eb;
+    }
+}
+
+@keyframes svg-anim {
+    0% {
+        fill: #3455eb;
+    }
+    33% {
+        fill: #aa32fa;
+    }
+    66% {
+        fill: #fa3271;
+    }
+    100% {
+        fill: #3455eb;
+    }
+}
+
+@keyframes card-anim {
+    0% {
+        background-color: #0c1335;
+    }
+    33% {
+        background-color: #300e46;
+    }
+    66% {
+        background-color: #3b0c1b;
+    }
+    100% {
+        background-color: #0c1335;
+    }
+}
+
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+}
+
+.my-name{
+    font-weight: 600;
+}
+
+.letter-fx{
+    animation: letter-anim 5s infinite;
+}
+
+ul{
+    list-style: square url(images/cursor-fill.svg) outside;
+}
+
+p, li{
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+a{
+    font-weight: 400;
+    text-decoration: none;
+}
+
+#header{
+    margin-top: 3rem;
+}
+
+#header > *{
+    margin: 1.5rem;
+}
+
+.section-header{
+    padding: 1rem;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+#footer{
+    padding: 0.6rem;
+    color: #fff;
+    font-size: 1rem;
+    z-index: 1;
+}
+
+#notes-carousel .carousel-item{
+    height: 300px;
+}
+
+.carousel-item img{
+    height: 300px;
+    object-fit: cover;
+}
+
+#main-image-fg{
+    height: 300px;
+    border-bottom: 5px solid #ddd;
+    margin-bottom: 2rem;
+}
+
+.svg-animated{
+    animation: svg-anim 5s infinite;
+}
+
+#notes{
+    padding: 0;
+}
+
+#notes p{
+    padding: 0.8rem;
+    color: #fff;
+}
+
+#contact-row{
+    padding: 0.8rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #777;
+}
+
+#contact-row svg{
+    fill: #777;
+    width: 20px;
+    height: 20px;
+}
+
+#contact-row p{
+    display: inline;
+}
+
+#showcase-grid .col{
+    margin: 1em;
+    padding: 1em;
+    border-radius: 0.5em;
+    color: #fff;
+    animation: card-anim 5s infinite;
+    min-width: 16rem;
+}
+
+#showcase-grid .grid-title{
+    font-weight: 600;
+}
+
+#showcase-grid svg{
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    margin-bottom: 1em;
+}
+
+#responsibilities{
+    margin: 1em;
+}
+
+#responsibilities .level-2-list{
+    color: #555;
+    list-style: none none outside;
+    margin-bottom: 1rem;
+}
+
+.card{
+    border: none;
+}
+
+.card-body{
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    border: 1px solid #aaa;
+}
+
+.card-body:not(:first-child){
+    margin-top: 0;
+}
+
+.card-title{
+    font-weight: 600;
+}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+}
+
+.blog-div{
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1em;
+}
+
+.button-div{
+    padding: 1rem;
+    margin: 1rem;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.blog-date{
+    color: #777;
+}
+
+.blog-content{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.blog-list li{
+    font-size: 1rem;
+}
+
+.blog-list .blog-list-heading{
+    display: inline;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+pre, code{
+    white-space: pre-line;
+}
+
+.skill-rating{
+    font-weight: 600;
+}
+
+.skill-box{
+    margin-top: 0.5rem;
+}
+
+.skill-box p{
+    display: inline;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px #00000077;
+    border: 2px solid #ffffff11;
+}
+
+.skill-box svg{
+    margin: 0.8rem;
+    margin-right: 0.1rem;
+    padding: 0;
+}
+
+.skill-title{
+    font-weight: 400;
+    font-size: 1.3rem;
+    font-family: 'Inconsolata', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.res-progress{
+    margin: 1rem 0;
+    height: 2rem;
+    width: 90%;
+    border: 2px solid #bbb;
+}
+
+.res-progress .progress-bar{
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: #333;
+}
+
+.achieve-item{
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
+.achieve-meta{
+    margin-top: 0.5rem;
+}
+
+.achieve-type{
+    pointer-events: none;
+}
+
+.achieve-type svg{
+    width: 20px;
+    height: 20px;
+    fill: white;
+    margin-bottom: 0.2rem;
+}
+
+@media (max-width: 1200px) {
+    #header > *{
+        display: block;
+        margin: 0.5rem;
+    }
+
+    #my-name{
+        margin-bottom: 0rem;
+    }
+
+    #contact-row p{
+        display: block;
+    }
+}
+
+@media (max-width: 1140px) {
+    #showcase-grid .row{
+        display: block;
+        margin-right: 1.2rem;
+    }
+
+    #footer{
+        text-align: center;
+    }
+}

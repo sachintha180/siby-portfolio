@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Blog Content</title>
+    </head>
+    <body>
+        <div>
+            <div id="post_1" class="blog-div">
+                <h5 class="blog-date">#</h5>
+                <h3 class="blog-heading">27-05-2023: Welcome to my portfolio!</h3>
+                <p class="blog-content">Hi, this is my first blog post. Nothing much, but its honest work. In this post, I wanted to mention a few courses that I've found to be instrumental in my progress. These courses are all available free-of-charge, and teach you a variety of digital skills. Here's the list:</p>
+                <ul class="blog-list">
+                    <li><p class="blog-list-heading">CS50x by Harvard</p>: To help you learn everything at an introductory computer science level. From binary & basic Python skills, to data structures in C++ and web development. 10/10, would recommend!</li>
+                    <li><p class="blog-list-heading">CS50ai by Havard</p>: For those interested in artificial intelligence, a subtle but comprehensive course on fundementals of machine learning and walks you through content such as searching algorithms, classifications & regression and neural networks.</li>
+                    <li><p class="blog-list-heading">Nand to Tetris by UofJerusalem</p>: An exciting course on computer engineering and hardware, where the goal of the course is to teach you how to go from Nand-gates to a fully functional computer that can run tetris. Teaches its content via an amazing hardware simulator, so no actual circuit building necessary. Amazing stuff!</li>
+                    <li><p class="blog-list-heading">Full Stack Open by UoHelsinki</p>: An entire course on full-stack-development using the Javascript, MongoDB, ReactJS / React Native and many other tools. Extremely comprehensive IMO.</li>
+                    <li><p class="blog-list-heading">Trainee Full Stack Developer Programme by UofMorotuwa</p>: A very comprehensive course on full-stack-development, teaching you skills all the way from basic Python to web development tools. The learning curve is very shallow, and would recommend for anyone wishing to get into the IT industry.</li>
+                </ul>
+                <p class="blog-content">In addition to these course, Reddit & StackOverflow have been my go-to sites for reviews and help on course content. These are the courses that I'm currently taking, and therefore have a lot more to understand and review. Nevertheless, it has been an amazing journey up until now, and hope I'll be able to pull through until the end. Stay tuned for my next update, best of luck to you!</p>     
+            </div>
+        </div>
+
+        <div>
+            <div id="post_2" class="blog-div">
+                <h5 class="blog-date">#</h5>
+                <h3 class="blog-heading">27-05-2023: Portfolio update #1</h3>
+                <p class="blog-content">Here's my first portfolio update.</p>
+                <p class="blog-content">The following key features are now online:</p>
+                <ul class="blog-list">
+                    <li>Reading blog content from a seperate, static HTML file (to allow for markup)</li>
+                    <li>Adding blog content to the page in chronological order, such that the latest post appears on the top</li>
+                    <li>Parsing the date from a short date in the condensed blog entry, to a long date in the full blog entry, using a custom <code>convertDate()</code> vanilla JavaScript function.</li>
+                </ul>
+                <p class="blog-content">A lot more updates coming up, stay tuned!</p>
+            </div>
+        </div>
+
+        <div>
+            <div id="post_3" class="blog-div">
+                <h5 class="blog-date">#</h5>
+                <h3 class="blog-heading">29-05-2023: Portfolio update #2</h3>
+                <p class="blog-content">I've now completed the <code>skills.html</code> page with a full Bootstrap-based grid for showcasing my technical skills, and an unordered list with sliders for showcasing my additional courses + their completion.</p>
+                <p class="blog-content">An interesting feature that was implemented was a custom sorting function - <code>sortSkills()</code> - for sorting my technical skills in descending order of proficiency.</p>
+                <p class="blog-content">The "badge effect" for the proficiency of each skill was achieved using <code>box-shadow</code> & <code>border-radius</code> properties, with a translucent <code>border-color</code>.</p>
+                <p class="blog-content">All content for the skills, courses and the responsibilities list (in <code>index.html</code>) were added dynamically to the HTML page using jQuery. This data was initialized in JavaScript objects and arrays, both 1 and 2 dimensional.</p>
+                <p class="blog-content">Thank you for sticking around. Hoping to publish my portfolio into a .com domain soon!</p>
+            </div>
+        </div>
+
+        <div>
+            <div id="post_4" class="blog-div">
+                <h5 class="blog-date">#</h5>
+                <h3 class="blog-heading">29-05-2023: Portfolio update #3</h3>
+                <p class="blog-content">The entire webpage is now complete! All first-iteration features are now fully functional, feel free to test them out!</p>
+                <p class="blog-content">The latest update involved the implementation of an <code>achievements.html</code> page to showcase my achievements of both school and international level.</p>
+                <p class="blog-content">The following implementations were made:</p>
+                <ul class="blog-list">
+                    <li>Adding achievements from a JavaScript object into <code>achievements.html</code> dynamically, sorted in decreasing order of importance using a custom <code>sortAchievements()</code> function.</li>
+                    <li>Implementing Boostrap-based reference and achievement level buttons. Achievement level buttons are colored dynamically according to its level, along with a suitable Bootstrap icon added.</li>
+                </ul>
+                <p class="blog-content">Thank you! The next iteration will hopefully include persistancy and login features.</p>
+            </div>
+        </div>
+    </body>
+</html>
