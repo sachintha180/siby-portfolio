@@ -27,17 +27,17 @@ res_content = [
     {
         "timeline": "2023 - Current",
         "title": "Pearson BTEC HND in Computing (Software Engineering) - Level 4 & 5",
-        "content": "Pursuing at CINEC Maritime Campus - Department of Information Technology"
+        "content": "Pursuing at CINEC Maritime Campus - Department of Information Technology."
     },
     {
         "timeline": "2022 - Current",
         "title": "Tutor & Assignment Designer",
-        "content": "SACE Digital Technologies (Level 2) - Gateway College Colombo" 
+        "content": "SACE Digital Technologies (Level 2) - Gateway College Colombo." 
     },
     {
         "timeline": "2021 - Current",
         "title": "Freelance Tutoring",
-        "content": "Computer Science & ICT for IGCSE & IAL, externally and via <a href='https://www.studyrooms.com/' alt='studyrooms-link'>Studyrooms</a>"
+        "content": "Computer Science & ICT for IGCSE & IAL, externally and via <a href='https://www.studyrooms.com/' alt='studyrooms-link'>Studyrooms</a>."
     }
 ]
 

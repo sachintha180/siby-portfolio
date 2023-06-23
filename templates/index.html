@@ -15,7 +15,6 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
-    <script src="scripts/index.js"></script>
 </head>
 
 <body>
@@ -87,7 +86,7 @@
                         </svg>
                     </a>
                 </div>
-                <ul>
+                <ul id="bio-list">
                     <li>
                         Goes by <abbr class="my-name"
                             title="'Sachintha is Behind You' - inspired from when I wanted to intimidate my brother during an online FPS game.">SiBy</abbr>
@@ -117,7 +116,7 @@
     <div id="showcase-grid" class="container-fluid text-center">
         <div class="row">
             {% for grid_item in grid_content %}
-                <div style='background-color: #0c1335' class='col'>
+                <div style='background-color: #0c1335; animation-delay: {{ loop.index * 0.5 }}s' class='col'>
                     <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
                         <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
                     </svg>
@@ -179,7 +178,7 @@
     <br>
 
     <div id="footer" class="container-fluid bg-dark">
-        Sachintha Senanayake &copy; 2023. All rights reserved
+        &copy; 2023 Sachintha Senanayake. All rights reserved.
     </div>
 </body>
 
