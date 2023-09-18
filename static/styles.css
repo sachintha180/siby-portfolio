@@ -1,60 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
-
 @keyframes letter-anim {
   0% {
     color: #3455eb;
   }
-
   33% {
     color: #aa32fa;
   }
-
   66% {
     color: #fa3271;
   }
-
   100% {
     color: #3455eb;
   }
 }
-
 @keyframes svg-anim {
   0% {
     fill: #3455eb;
   }
-
   33% {
     fill: #aa32fa;
   }
-
   66% {
     fill: #fa3271;
   }
-
   100% {
     fill: #3455eb;
   }
 }
-
 @keyframes card-anim {
   0% {
     background-color: #0c1335;
   }
-
   33% {
     background-color: #300e46;
   }
-
   66% {
     background-color: #3b0c1b;
   }
-
   100% {
     background-color: #0c1335;
   }
 }
-
 * {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
@@ -86,8 +73,7 @@ a {
 #header {
   margin-top: 3rem;
 }
-
-#header>* {
+#header > * {
   margin: 1.5rem;
 }
 
@@ -102,12 +88,13 @@ a {
   color: #ffffff;
   font-size: 1rem;
   z-index: 1;
+  position: fixed;
+  bottom: 0;
 }
 
 #notes-carousel .carousel-item {
   height: 300px;
 }
-
 #notes-carousel .carousel-item img {
   height: 300px;
   object-fit: cover;
@@ -126,7 +113,6 @@ a {
 #notes {
   padding: 0;
 }
-
 #notes p {
   padding: 0.8rem;
   color: #ffffff;
@@ -138,13 +124,11 @@ a {
   margin-bottom: 1rem;
   color: #777777;
 }
-
 #contact-row svg {
   fill: #777777;
   width: 20px;
   height: 20px;
 }
-
 #contact-row p {
   display: inline;
 }
@@ -157,11 +141,9 @@ a {
   animation: card-anim 5s infinite;
   min-width: 16rem;
 }
-
 #showcase-grid .grid-title {
   font-weight: 600;
 }
-
 #showcase-grid svg {
   width: 20px;
   height: 20px;
@@ -172,7 +154,6 @@ a {
 #responsibilities {
   margin: 1em;
 }
-
 #responsibilities .level-2-list {
   color: #555555;
   list-style: none none outside;
@@ -198,11 +179,6 @@ a {
   font-weight: 600;
 }
 
-#footer {
-  position: fixed;
-  bottom: 0;
-}
-
 .blog-div {
   padding: 1rem;
   margin: 1rem;
@@ -223,7 +199,6 @@ a {
 .blog-list li {
   font-size: 1rem;
 }
-
 .blog-list .blog-list-heading {
   display: inline;
   font-size: 1rem;
@@ -242,7 +217,6 @@ code {
 .skill-box {
   margin-top: 0.5rem;
 }
-
 .skill-box p {
   display: inline;
   margin: 0;
@@ -251,7 +225,6 @@ code {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4666666667);
   border: 2px solid rgba(255, 255, 255, 0.0666666667);
 }
-
 .skill-box svg {
   margin: 0.8rem;
   margin-right: 0.1rem;
@@ -272,7 +245,6 @@ code {
   width: 90%;
   border: 2px solid #bbbbbb;
 }
-
 .res-progress .progress-bar {
   font-weight: 600;
   font-size: 1rem;
@@ -291,7 +263,6 @@ code {
 .achieve-type {
   pointer-events: none;
 }
-
 .achieve-type svg {
   width: 20px;
   height: 20px;
@@ -300,29 +271,24 @@ code {
 }
 
 @media (max-width: 1200px) {
-  #header>* {
+  #header > * {
     display: block;
     margin: 0.5rem;
   }
-
   #my-name {
     margin-bottom: 0rem;
   }
-
   #contact-row p {
     display: block;
   }
-
   #responsibility-list,
   #bio-list {
     margin-right: 2rem;
   }
-
   #footer {
     text-align: center;
   }
 }
-
 @media (max-width: 1140px) {
   #showcase-grid .row {
     display: block;

@@ -1,21 +1,17 @@
-$(document).ready(function()
-{
-    function sortSkills(skillsArray)
-    {
+$(document).ready(function () {
+    function sortSkills(skillsArray) {
         let b;
 
-        for (let a = 1; a < skillsArray.length; a++)
-        {
+        for (let a = 1; a < skillsArray.length; a++) {
             skill = skillsArray[a];
             b = a - 1;
 
-            while (b >= 0 && skill[1] > skillsArray[b][1])
-            {
-                skillsArray[b+1] = skillsArray[b];
+            while (b >= 0 && skill[1] > skillsArray[b][1]) {
+                skillsArray[b + 1] = skillsArray[b];
                 b--;
             }
 
-            skillsArray[b+1] = skill;
+            skillsArray[b + 1] = skill;
         }
 
         return skillsArray
@@ -62,7 +58,7 @@ $(document).ready(function()
         ["Premiere Pro", 2],
         ["Godot Game Engine", 3]
     ];
-    
+
     skillContent = sortSkills(skillContent);
 
     let resTag = `
@@ -110,35 +106,33 @@ $(document).ready(function()
             0.1
         ]
     }
-    
-    for (let i = 0; i < Object.keys(skillContent).length; i++)
-    {
+
+    for (let i = 0; i < Object.keys(skillContent).length; i++) {
         let skillItem = $.parseHTML(skillTag);
 
         $(skillItem).find(".skill-title").html(skillContent[i][0]);
 
-        $(skillItem).find(".skill-rating").html(skillWords[skillContent[i][1]-1]);
+        $(skillItem).find(".skill-rating").html(skillWords[skillContent[i][1] - 1]);
         $(skillItem).find(".skill-rating").css({
-            'color': skillColors[skillContent[i][1]-1]
+            'color': skillColors[skillContent[i][1] - 1]
         });
-        $(skillItem).find(".skill-rating").append(skillIcons[skillContent[i][1]-1]);
+        $(skillItem).find(".skill-rating").append(skillIcons[skillContent[i][1] - 1]);
         $(skillItem).find(".skill-rating svg").css({
-            'fill': skillColors[skillContent[i][1]-1]
+            'fill': skillColors[skillContent[i][1] - 1]
         });
 
         $("#showcase-grid .row").append(skillItem);
 
         $(`#showcase-grid .col:nth-child(${i})`).css({
-            "animation-delay": `${i*0.5}s`
-        }); 
+            "animation-delay": `${i * 0.5}s`
+        });
     }
 
-    for (let i = 0; i < Object.keys(resContent).length; i++)
-    {
+    for (let i = 0; i < Object.keys(resContent).length; i++) {
         let resItem = $.parseHTML(resTag);
-        let resPercent = resContent[`res_${i+1}`][2]*100;
+        let resPercent = resContent[`res_${i + 1}`][2] * 100;
 
-        $(resItem).find(".res-title").html($.parseHTML(`<b>${resContent[`res_${i+1}`][0]}: </b>${resContent[`res_${i+1}`][1]}`));
+        $(resItem).find(".res-title").html($.parseHTML(`<b>${resContent[`res_${i + 1}`][0]}: </b>${resContent[`res_${i + 1}`][1]}`));
         $(resItem).find(".res-progress .progress-bar").attr("style", `width: ${resPercent}%;`);
         $(resItem).find(".res-progress .progress-bar").html(`${resPercent}%`);
 

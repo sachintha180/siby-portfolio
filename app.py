@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect
+from util import get_full_date, get_summary
 
 app = Flask(__name__)
 
@@ -47,7 +48,7 @@ def home():
 
 @app.route("/blog")
 def blog():
-    return redirect("/")
+    return render_template("blog.html", blog_content=[])
 
 @app.route("/skills")
 def skills():
@@ -56,3 +57,7 @@ def skills():
 @app.route("/achievements")
 def achievements():
     return redirect("/")
+
+@app.route("/blog_posts")
+def blog_posts():
+    return render_template("blog_posts.html")

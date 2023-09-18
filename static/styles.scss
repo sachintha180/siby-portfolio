@@ -102,6 +102,8 @@ a {
     color: #ffffff;
     font-size: 1rem;
     z-index: 1;
+    position: fixed;
+    bottom: 0;
 }
 
 #notes-carousel {
@@ -200,11 +202,6 @@ a {
 
 .card-title {
     font-weight: 600;
-}
-
-#footer {
-    position: fixed;
-    bottom: 0;
 }
 
 .blog-div {

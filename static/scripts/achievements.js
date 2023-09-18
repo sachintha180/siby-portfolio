@@ -1,37 +1,31 @@
-$(document).ready(function()
-{
-    function changeCase(text){
+$(document).ready(function () {
+    function changeCase(text) {
         let words = text.split("_");
 
-        if (words.length > 2)
-        {
-            words = [words[words.length-1]].concat(words.slice(0, words.length-1));
+        if (words.length > 2) {
+            words = [words[words.length - 1]].concat(words.slice(0, words.length - 1));
         };
 
-        for (let a = 0; a < words.length; a++)
-        {   
+        for (let a = 0; a < words.length; a++) {
             words[a] = words[a].slice(0, 1).toUpperCase() + words[a].slice(1, words[a].length);
         };
 
         return words.join(" ");
     }
 
-    function sortAchievements(achieveArray)
-    {
+    function sortAchievements(achieveArray) {
         let b;
 
-        for (let a = 1; a < achieveArray.length; a++)
-        {
+        for (let a = 1; a < achieveArray.length; a++) {
             let achievement = achieveArray[a];
             b = a - 1;
 
-            while (b >= 0 && achievement[3] <= achieveArray[b][3])
-            {
-                achieveArray[b+1] = achieveArray[b];
+            while (b >= 0 && achievement[3] <= achieveArray[b][3]) {
+                achieveArray[b + 1] = achieveArray[b];
                 b--;
             }
 
-            achieveArray[b+1] = achievement;
+            achieveArray[b + 1] = achievement;
         }
 
         return achieveArray
@@ -95,9 +89,8 @@ $(document).ready(function()
     ];
 
     achievementContent = sortAchievements(achievementContent);
-    
-    for (let i = 0; i < achievementContent.length; i++)
-    {
+
+    for (let i = 0; i < achievementContent.length; i++) {
         let achieveItem = $.parseHTML(achievementTag);
         let achieveType = Object.keys(achievementMeta)[achievementContent[i][3]];
 
@@ -106,11 +99,10 @@ $(document).ready(function()
             `${changeCase(achieveType)}&nbsp;&nbsp;${achievementMeta[achieveType][0]}`
         ));
 
-        if (achievementContent[i][2] == "#"){
+        if (achievementContent[i][2] == "#") {
             $(achieveItem).find(".achieve-link").remove();
         }
-        else
-        {
+        else {
             $(achieveItem).find(".achieve-link").attr("href", achievementContent[i][2])
         }
 
