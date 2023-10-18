@@ -1,11 +1,11 @@
-# siby-portfolio
+# Siby's Portfolio (siby-portfolio)
 Files that make up by basic web portfolio for CS50x 2023.
 
-## Hi, I'm Sachintha Senanayake
-- From Colombo, Sri Lanka 🇱🇰
-- Did CS50x 2023, as part of the [Springboard](https://calcey.com/springboard/) Scholarship Programme 
-- Go by @SiBy online.
-- Love teaching CS + algorithm design, DS, ANNs and GAs.
+## What's Siby's Portfolio?
+- My (eventual) permanent internet residence.
+- A website to act as a digital record of my projects, skills and achievements.
+- A CS tool repository – such as StructVisu (a tool to visualize C structs in memory) for students
+- Means of getting my feet wet with different digital technologies.
 
 ## How do you access my project?
 - Clone this repository from your device, via `git clone`
