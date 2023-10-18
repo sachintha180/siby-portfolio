@@ -9,15 +9,22 @@
 - Means of getting my feet wet with different digital technologies.
 
 ## What are the files that make up this project?
-```static\
-   images\ (contains images used in the website)
-   scripts\ (contains .js files used for dynamic behaviour, animations and the structvisu tool)
-   (other files, such as styles.css, are also available - used for styling)
-templates\ (contains all .html files, served via Flask)
-app.py (contains the main server script, which needs to be activated to run the website)
-data.py (contains dictionaries accessed by app.py, containing data about my projects and responsiblities)
-requirements.txt (list of required Python packages to setup virtual environment prior running Flask server)
 ```
+static\
+   images\ 
+   scripts\
+app.py
+data.py
+requirements.txt
+```
+
+- `static\images\`: images used in the website
+- `static\scripts\`: .js files used for dynamic behaviour, animations and the structvisu tool
+- `static\`: other files, such as styles.css & styles.sass, used for styling
+- `templates\`: contains all .html files, served via Flask
+- `app.py`: contains the main server script, which needs to be activated to run the website
+- `data.py`: contains dictionaries accessed by app.py, containing data about my projects and responsiblities
+- `requirements.txt`: list of required Python packages to setup virtual environment prior running Flask server
 
 ## How do you access my project?
 - Clone this repository from your device, via `git clone`
