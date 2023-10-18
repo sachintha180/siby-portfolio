@@ -1,6 +1,6 @@
 # Siby's Portfolio (siby-portfolio)
 Files that make up by basic web portfolio for CS50x 2023.
-Video Demonstration URL: https://youtu.be/dPUp13jp0nw
+- Video Demonstration URL: https://youtu.be/dPUp13jp0nw
 
 ## What's Siby's Portfolio?
 - My (eventual) permanent internet residence.
