@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<div class="navbar-nav">
+    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+    <a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
+    <a class="nav-link" href="{{ url_for('skills') }}">Skills</a>
+    <a class="nav-link" href="{{ url_for('achievements') }}">Achievements</a>
+    <a class="nav-link" href="{{ url_for('structvisu') }}">StructVisu</a>
+    <a class="nav-link active" aria-current="page" href="{{ url_for('post') }}">Post</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="post-container">
+    <div class="form-content">
+        <label for="post-title" class="form-label">Enter post title:</label>
+        <input type="text" class="form-control" id="post-title" placeholder="e.g. My first blog post"
+            autocomplete="off">
+    </div>
+    <div class="form-content">
+        <label for="post-text" class="form-label">Type your post:</label>
+        <textarea class="form-control" id="post-text" rows="5"></textarea>
+    </div>
+    <div class="form-content">
+        <p id="post-error">Invalid text / title, could not post.</p>
+    </div>
+    <div class="form-content">
+        <button type="button" id="post-confirm-btn" class="btn btn-primary">Confirm Post</button>
+    </div>
+</div>
+{% endblock %}

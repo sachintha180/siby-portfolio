@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<div class="navbar-nav">
+    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+    <a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
+    <a class="nav-link" href="{{ url_for('skills') }}">Skills</a>
+    <a class="nav-link" href="{{ url_for('achievements') }}">Achievements</a>
+    <a class="nav-link active" aria-current="page" href="{{ url_for('structvisu') }}">StructVisu</a>
+    {% if loggedIn %}
+    <a class="nav-link" href="{{ url_for('post') }}">Post</a>
+    {% endif %}
+    {% if not loggedIn %}
+    <button type="button" id="login-btn" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#login-modal">Login</button>
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block content %}
+<h2 id="struct-heading">C Struct Visualizer</h2>
+<h5 class="struct-subtitle">Understand how (struct)ures in C/C++ are assembled in memory</h5>
+<h6 class="struct-subtitle">Create your own struct below. Click 'Add +' to add more struct members:</h6>
+<div class="struct-container">
+    <div id="struct-header">
+        <p class="struct-code">struct</p>
+        <input type="text" class="form-control" id="struct-name" placeholder="e.g. Car"
+            autocomplete="off">
+        <p class="struct-code">{</p>
+    </div>
+    <div id="struct-content">
+        <div class="struct-member">
+            <select name="dtype" class="form-select struct-member-dtype" aria-label="dtype">
+                <option value="">datatype</option>
+                <option value="char">char</option>
+                <option value="short">short</option>
+                <option value="int">int</option>
+                <option value="long">long</option>
+                <option value="long long">long long</option>
+                <option value="float">float</option>
+                <option value="double">double</option>
+            </select>
+            <input type="text" class="form-control struct-member-name" placeholder="e.g. wheels"
+            autocomplete="off">
+            <p class="struct-code">;</p>
+            <!-- <button type="button" id="remove-member" class="btn btn-danger">-</button> -->
+        </div>
+    </div>
+    <div id="struct-footer">
+        <p class="struct-code">}</p>
+    </div>
+    <button type="button" id="add-member" class="btn btn-success">Add +</button>
+    <button type="button" id="compile-struct" class="btn btn-primary">Compile Struct</button>
+</div>
+<h5 class="struct-subtitle" id="memory-title">Memory View</h5>
+<div class="struct-container" id="memory-container">
+</div>
+<br>
+<br>
+<br>
+<script src="{{ url_for('static', filename='scripts/structvisu.js')}}"></script>
+{% endblock %}

@@ -70,6 +70,24 @@ a {
   text-decoration: none;
 }
 
+label {
+  font-weight: 400;
+}
+
+#welcome-message {
+  margin: 0 2rem;
+  background-color: #fa3271;
+  border-radius: 0 0 2rem 2rem;
+}
+
+#welcome-message p {
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  margin: 0;
+  padding: 0.5rem;
+}
+
 #header {
   margin-top: 3rem;
 }
@@ -139,7 +157,7 @@ a {
   border-radius: 0.5em;
   color: #ffffff;
   animation: card-anim 5s infinite;
-  min-width: 16rem;
+  min-width: 200px;
 }
 #showcase-grid .grid-title {
   font-weight: 600;
@@ -161,53 +179,48 @@ a {
 }
 
 .card {
+  display: flex;
+  flex-direction: row;
   border: none;
-}
-
-.card-body {
   margin: 1em;
+}
+.card > * {
   padding: 1em;
   border-radius: 1em;
   border: 1px solid #aaaaaa;
 }
-
-.card-body:not(:first-child) {
+.card .card-index {
+  min-width: 100px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+.card .card-index p {
+  font-family: "Inconsolata", Courier, monospace;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.card .card-body:not(:first-child) {
   margin-top: 0;
 }
-
-.card-title {
+.card .card-title {
   font-weight: 600;
 }
-
-.blog-div {
-  padding: 1rem;
-  margin: 1rem;
-  margin-top: 0;
-  padding-top: 0;
+.card .card-date {
+  color: #aaa;
 }
 
-.blog-date {
-  color: #777777;
+.form-content {
+  margin: 0.5rem 1rem;
 }
-
-.blog-content {
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 400;
+.form-content p {
   font-size: 1rem;
-}
-
-.blog-list li {
-  font-size: 1rem;
-}
-.blog-list .blog-list-heading {
-  display: inline;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-pre,
-code {
-  white-space: pre-line;
+  margin-bottom: 1rem;
+  color: #ff0000;
+  display: none;
 }
 
 .skill-rating {
@@ -276,6 +289,103 @@ code {
   margin-right: 1rem;
 }
 
+#struct-heading {
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+#struct-heading,
+.struct-subtitle {
+  text-align: center;
+  padding: 0;
+  margin: 1rem;
+}
+
+.struct-container {
+  border-radius: 1em;
+  border: 1px solid #aaaaaa;
+  padding: 1rem;
+  margin: 0 300px;
+}
+.struct-container * {
+  font-size: 1.2rem;
+  font-family: "Inconsolata", Courier, monospace;
+}
+.struct-container #struct-header,
+.struct-container .struct-member,
+.struct-container #struct-footer {
+  display: flex;
+  align-items: center;
+}
+.struct-container #struct-header *,
+.struct-container .struct-member *,
+.struct-container #struct-footer * {
+  margin: 0.5rem;
+}
+.struct-container #struct-header p,
+.struct-container .struct-member p,
+.struct-container #struct-footer p {
+  padding: 0;
+}
+.struct-container #struct-content {
+  margin-left: 2rem;
+}
+.struct-container #compile-struct {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#memory-container {
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#memory-error {
+  color: red;
+}
+
+.memory-member {
+  height: 50px;
+  width: 50px;
+  margin: 0.2em;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.memory-member .memory-member-name {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: bold;
+}
+.memory-member .memory-member-tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
+.memory-member :hover .memory-member-tooltip {
+  visibility: visible;
+}
+
+.member-0 {
+  background-color: #3455eb;
+}
+
+.member-1 {
+  background-color: #aa32fa;
+}
+
+.member-2 {
+  background-color: #fa3271;
+}
+
 @media (max-width: 1200px) {
   #header > * {
     display: block;
@@ -307,6 +417,12 @@ code {
     right: 0;
     margin: 0.5rem 0;
     width: 100px;
+  }
+  .card .card-index {
+    display: none;
+  }
+  .struct-container {
+    margin: 0 1rem;
   }
 }
 

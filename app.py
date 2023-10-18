@@ -1,30 +1,89 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, jsonify, redirect, request, session
 import data
-import pymongo
-from util import get_full_date, get_summary
+from datetime import datetime
+from pymongo import MongoClient
+import uuid
 
 app = Flask(__name__)
+app.secret_key = uuid.uuid4().hex
+
+client = MongoClient("localhost", 27017)
+db = client.portfolio
+
 
 @app.route("/")
 def home():
-    return render_template("index.html", grid_content=data.grid_content, res_content=data.res_content, images=[i+1 for i in range(data.MAX_IMAGES)])
+    loggedIn = "email" in session
+    email = None
+    if loggedIn:
+        email = session["email"]
+
+    return render_template(
+        "index.html",
+        projects=data.projects,
+        responsibilities=data.responsibilities,
+        images=[i + 1 for i in range(data.MAX_IMAGES)],
+        loggedIn=loggedIn,
+        email=email,
+    )
+
+
+@app.route("/login", methods=["POST"])
+def login():
+    email = request.form.get("email")
+    password = str(request.form.get("password")).strip().lower()
+    loggedIn = False
+
+    users = db.users.find_one({"email": email})
+    if users:
+        if users["password"] == password:
+            session["email"], loggedIn = email, True
+
+    return jsonify({"loggedIn": loggedIn})
+
 
 @app.route("/blog")
 def blog():
-    return render_template("blog.html", blog_content=[])
+    posts = list(db.blog.find())
+    return render_template("blog.html", posts=posts, loggedIn="email" in session)
 
-@app.route("/login")
-def login():
-    return "Hello, World"
+
+@app.route("/posted", methods=["POST"])
+def posted():
+    title = str(request.form.get("title")).strip()
+    text = str(request.form.get("text")).strip()
+
+    posted = True
+    try:
+        db.blog.insert_one({"timestamp": datetime.now(), "title": title, "text": text})
+    except:
+        posted = False
+
+    return jsonify({"posted": posted})
+
+
+@app.route("/post")
+def post():
+    if "email" not in session:
+        return redirect("/")
+
+    return render_template("post.html")
+
 
 @app.route("/skills")
 def skills():
-    return redirect("/")
+    return render_template("skills.html", loggedIn="email" in session)
+
 
 @app.route("/achievements")
 def achievements():
-    return redirect("/")
+    return render_template("achievements.html", loggedIn="email" in session)
 
-@app.route("/blog_posts")
-def blog_posts():
-    return render_template("blog_posts.html")
+
+@app.route("/structvisu")
+def structvisu():
+    return render_template("structvisu.html", loggedIn="email" in session)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

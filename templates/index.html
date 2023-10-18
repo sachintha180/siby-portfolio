@@ -6,12 +6,25 @@
     <a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
     <a class="nav-link" href="{{ url_for('skills') }}">Skills</a>
     <a class="nav-link" href="{{ url_for('achievements') }}">Achievements</a>
-    <button type="button" id="login-btn" class="btn btn-primary">Login</button>
+    <a class="nav-link" href="{{ url_for('structvisu') }}">StructVisu</a>
+    {% if loggedIn %}
+    <a class="nav-link" href="{{ url_for('post') }}">Post</a>
+    {% endif %}
+    {% if not loggedIn %}
+    <button type="button" id="login-btn" class="btn btn-primary" data-bs-toggle="modal"
+        data-bs-target="#login-modal">Login</button>
     </form>
+    {% endif %}
 </div>
 {% endblock %}
 
 {% block content %}
+{% if loggedIn %}
+<div id="welcome-message">
+    <p>Welcome to my portfolio, {{ email }}!</p>
+</div>
+{% endif %}
+
 <div id="header" class="container-fluid">
     <div class="row align-items-center">
         <div id="main-image" class="col text-center">
@@ -91,14 +104,14 @@
 
 <div id="showcase-grid" class="container-fluid text-center">
     <div class="row">
-        {% for grid_item in grid_content %}
+        {% for project in projects %}
         <div style='background-color: #0c1335; animation-delay: {{ loop.index * 0.5 }}s' class='col'>
             <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
                 <path
                     d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" />
             </svg>
-            <p class='grid-title'>{{ grid_item.title }}</p>
-            <p class='grid-description'>{{ grid_item.content }}</p>
+            <p class='grid-title'>{{ project.title }}</p>
+            <p class='grid-description'>{{ project.content }}</p>
         </div>
         {% endfor %}
     </div>
@@ -112,11 +125,11 @@
 
 <div id="responsibilities" class="container-fluid">
     <ul id="responsibility-list">
-        {% for res_item in res_content %}
+        {% for responsibility in responsibilities %}
         <li>
-            <p class='res-title' style='margin: 0;'><b>{{ res_item.timeline }}</b>: {{ res_item.title }}</p>
+            <p class='res-title' style='margin: 0;'><b>{{ responsibility.timeline }}</b>: {{ responsibility.title }}</p>
             <ul class="level-2-list">
-                <li class='res-description'>{{ res_item.content | safe }}</li>
+                <li class='res-description'>{{ responsibility.content | safe }}</li>
             </ul>
         </li>
         {% endfor %}
