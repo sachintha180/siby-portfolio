@@ -13,6 +13,7 @@
 static\
    images\ 
    scripts\
+templates\
 app.py
 data.py
 requirements.txt
