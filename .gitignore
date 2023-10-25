@@ -1,0 +1,5 @@
+# ignore all files in the env/ directory
+env/
+__pycache__
+app.yaml
+.gcloudignore
