@@ -7,8 +7,8 @@ import uuid
 app = Flask(__name__)
 app.secret_key = uuid.uuid4().hex
 
-client = MongoClient("localhost", 27017)
-db = client.portfolio
+# client = MongoClient("localhost", 27017)
+# db = client.portfolio
 
 
 @app.route("/")
@@ -34,17 +34,18 @@ def login():
     password = str(request.form.get("password")).strip().lower()
     loggedIn = False
 
-    users = db.users.find_one({"email": email})
-    if users:
-        if users["password"] == password:
-            session["email"], loggedIn = email, True
+    # users = db.users.find_one({"email": email})
+    # if users:
+    #     if users["password"] == password:
+    #         session["email"], loggedIn = email, True
 
     return jsonify({"loggedIn": loggedIn})
 
 
 @app.route("/blog")
 def blog():
-    posts = list(db.blog.find())
+    # posts = list(db.blog.find())
+    posts = []
     return render_template("blog.html", posts=posts, loggedIn="email" in session)
 
 
@@ -54,10 +55,10 @@ def posted():
     text = str(request.form.get("text")).strip()
 
     posted = True
-    try:
-        db.blog.insert_one({"timestamp": datetime.now(), "title": title, "text": text})
-    except:
-        posted = False
+    # try:
+    #     db.blog.insert_one({"timestamp": datetime.now(), "title": title, "text": text})
+    # except:
+    #     posted = False
 
     return jsonify({"posted": posted})
 
@@ -86,4 +87,4 @@ def structvisu():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
