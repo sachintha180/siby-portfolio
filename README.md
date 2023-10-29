@@ -1,4 +1,4 @@
-# Siby's Portfolio (siby-portfolio)
+# Siby's Portfolio (siby-portfolio) - Production Branch
 - Files that make up by basic web portfolio for CS50x 2023.
 - Video Demonstration URL: https://youtu.be/dPUp13jp0nw
 
@@ -40,14 +40,9 @@ requirements.txt
 - StructVisu - a vanilla-JS tool to help students visualize C structs in memory (was a fun flexbox exercise)
    
 ## I can't login to the website, why is that?
-- This web app relies on reading information from a MongoDB server, running on `localhost`, port `27017`
-- It reads from a MongoDB database named `portfolio`, which has two collections within it:
-  - `users` (which contains user information)
-  - `blog` (which containt the blog posts' information)
-- Create these two collections on your MongoDB server, using `db.createCollection(<name>)` - which can be done via the [Mongo Shell](https://www.mongodb.com/docs/mongodb-shell/) / [MongoDBCompass](https://www.mongodb.com/products/tools/compass)
-- The rest is a challenge - try sniffing `app.py` to understand the schema of documents in these collections and manually tamper with the `user` and `blog` collections. If you get it right, you should be able to login to the website & see new blog posts that you've added on refresh.
+- The production portfolio currently features an admin-only login.
 
 ## What technologies did I use?
 - Frontend: HTML + Sass + JavaScript
 - Backend: Python w/ Flask
-- Data Layer: MongoDB
+- Data Layer: SQLite
