@@ -1,4 +1,5 @@
-# ignore all files in the env/ directory
 env/
 __pycache__
 static/DDL.sql
+app.yaml
+.gcloudignore
