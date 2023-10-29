@@ -20,6 +20,7 @@
 
 {% block content %}
 <div class="cards">
+    {% if posts | length > 0 %}
     {% for post in posts | reverse %}
     <div class="card">
         <div class="card-index">
@@ -32,5 +33,9 @@
         </div>
     </div>
     {% endfor %}
+    {% else %}
+    <p id="blog-wait-message">No blog posts yet, come back later!</p>
+    {% endif %}
+
 </div>
 {% endblock %}

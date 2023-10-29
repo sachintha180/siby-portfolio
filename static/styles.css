@@ -91,6 +91,7 @@ label {
 #header {
   margin-top: 3rem;
 }
+
 #header > * {
   margin: 1.5rem;
 }
@@ -113,6 +114,7 @@ label {
 #notes-carousel .carousel-item {
   height: 300px;
 }
+
 #notes-carousel .carousel-item img {
   height: 300px;
   object-fit: cover;
@@ -131,6 +133,7 @@ label {
 #notes {
   padding: 0;
 }
+
 #notes p {
   padding: 0.8rem;
   color: #ffffff;
@@ -142,11 +145,13 @@ label {
   margin-bottom: 1rem;
   color: #777777;
 }
+
 #contact-row svg {
   fill: #777777;
   width: 20px;
   height: 20px;
 }
+
 #contact-row p {
   display: inline;
 }
@@ -159,9 +164,11 @@ label {
   animation: card-anim 5s infinite;
   min-width: 200px;
 }
+
 #showcase-grid .grid-title {
   font-weight: 600;
 }
+
 #showcase-grid svg {
   width: 20px;
   height: 20px;
@@ -172,6 +179,7 @@ label {
 #responsibilities {
   margin: 1rem 0;
 }
+
 #responsibilities .level-2-list {
   color: #555555;
   list-style: none none outside;
@@ -184,11 +192,13 @@ label {
   border: none;
   margin: 1em;
 }
+
 .card > * {
   padding: 1em;
   border-radius: 1em;
   border: 1px solid #aaaaaa;
 }
+
 .card .card-index {
   min-width: 100px;
   padding: 0;
@@ -197,18 +207,22 @@ label {
   justify-content: center;
   margin-right: 1rem;
 }
+
 .card .card-index p {
   font-family: "Inconsolata", Courier, monospace;
   font-size: 2rem;
   margin: 0;
   padding: 0;
 }
+
 .card .card-body:not(:first-child) {
   margin-top: 0;
 }
+
 .card .card-title {
   font-weight: 600;
 }
+
 .card .card-date {
   color: #aaa;
 }
@@ -216,6 +230,7 @@ label {
 .form-content {
   margin: 0.5rem 1rem;
 }
+
 .form-content p {
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -230,6 +245,7 @@ label {
 .skill-box {
   margin-top: 0.5rem;
 }
+
 .skill-box p {
   display: inline;
   margin: 0;
@@ -238,6 +254,7 @@ label {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4666666667);
   border: 2px solid rgba(255, 255, 255, 0.0666666667);
 }
+
 .skill-box svg {
   margin: 0.8rem;
   margin-right: 0.1rem;
@@ -258,6 +275,7 @@ label {
   width: 90%;
   border: 2px solid #bbbbbb;
 }
+
 .res-progress .progress-bar {
   font-weight: 600;
   font-size: 1rem;
@@ -276,6 +294,7 @@ label {
 .achieve-type {
   pointer-events: none;
 }
+
 .achieve-type svg {
   width: 20px;
   height: 20px;
@@ -307,29 +326,35 @@ label {
   padding: 1rem;
   margin: 0 300px;
 }
+
 .struct-container * {
   font-size: 1.2rem;
   font-family: "Inconsolata", Courier, monospace;
 }
+
 .struct-container #struct-header,
 .struct-container .struct-member,
 .struct-container #struct-footer {
   display: flex;
   align-items: center;
 }
+
 .struct-container #struct-header *,
 .struct-container .struct-member *,
 .struct-container #struct-footer * {
   margin: 0.5rem;
 }
+
 .struct-container #struct-header p,
 .struct-container .struct-member p,
 .struct-container #struct-footer p {
   padding: 0;
 }
+
 .struct-container #struct-content {
   margin-left: 2rem;
 }
+
 .struct-container #compile-struct {
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -353,12 +378,14 @@ label {
   justify-content: center;
   align-items: center;
 }
+
 .memory-member .memory-member-name {
   margin: 0;
   padding: 0;
   color: white;
   font-weight: bold;
 }
+
 .memory-member .memory-member-tooltip {
   visibility: hidden;
   width: 120px;
@@ -370,6 +397,7 @@ label {
   position: absolute;
   z-index: 1;
 }
+
 .memory-member :hover .memory-member-tooltip {
   visibility: visible;
 }
@@ -425,5 +453,10 @@ label {
     margin: 0 1rem;
   }
 }
+#blog-wait-message {
+  margin: 1rem;
+}
+
+
 
 /*# sourceMappingURL=styles.css.map */

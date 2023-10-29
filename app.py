@@ -1,14 +1,15 @@
-from flask import Flask, render_template, jsonify, redirect, request, session
+from flask import Flask, Response
+from flask import render_template, jsonify, redirect, request, session, url_for
+from flask_session import Session
 import data
-from datetime import datetime
-from pymongo import MongoClient
-import uuid
+import sqlite3
+import bcrypt
 
 app = Flask(__name__)
-app.secret_key = uuid.uuid4().hex
 
-# client = MongoClient("localhost", 27017)
-# db = client.portfolio
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 
 
 @app.route("/")
@@ -30,22 +31,33 @@ def home():
 
 @app.route("/login", methods=["POST"])
 def login():
-    email = request.form.get("email")
+    email = str(request.form.get("email"))
     password = str(request.form.get("password")).strip().lower()
-    loggedIn = False
 
-    # users = db.users.find_one({"email": email})
-    # if users:
-    #     if users["password"] == password:
-    #         session["email"], loggedIn = email, True
+    with sqlite3.connect("portfolio.db") as con:
+        cur = con.cursor()
+        result = cur.execute(
+            "SELECT password FROM user WHERE email = ?", (email,)
+        ).fetchone()
+        if result:
+            if bcrypt.checkpw(bytes(password, "utf-8"), result[0]):
+                session["email"] = email
+                return redirect(url_for("home"))
 
-    return jsonify({"loggedIn": loggedIn})
+    return Response(status=401)
 
 
 @app.route("/blog")
 def blog():
-    # posts = list(db.blog.find())
     posts = []
+    with sqlite3.connect("portfolio.db") as con:
+        cur = con.cursor()
+        result = cur.execute("SELECT * FROM POST").fetchall()
+        if result:
+            for post in result:
+                posts.append(
+                    {"timestamp": post[1], "title": post[2], "text": post[3]})
+
     return render_template("blog.html", posts=posts, loggedIn="email" in session)
 
 
@@ -54,19 +66,23 @@ def posted():
     title = str(request.form.get("title")).strip()
     text = str(request.form.get("text")).strip()
 
-    posted = True
-    # try:
-    #     db.blog.insert_one({"timestamp": datetime.now(), "title": title, "text": text})
-    # except:
-    #     posted = False
+    with sqlite3.connect("portfolio.db") as con:
+        cur = con.cursor()
+        result = cur.execute(
+            "SELECT post_id FROM POST ORDER BY post_id DESC LIMIT 1").fetchone()
+        if result:
+            cur.execute(
+                "INSERT INTO POST(post_id, title, text) VALUES (?, ?, ?)", (result[0]+1, title, text,))
+            con.commit()
+            return redirect(url_for("blog"))
 
-    return jsonify({"posted": posted})
+    return Response(status=500)
 
 
 @app.route("/post")
 def post():
     if "email" not in session:
-        return redirect("/")
+        return redirect(url_for("home"))
 
     return render_template("post.html")
 

@@ -1,476 +1,482 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
 
 @keyframes letter-anim {
-    0% {
-        color: #3455eb;
-    }
+  0% {
+    color: #3455eb;
+  }
 
-    33% {
-        color: #aa32fa;
-    }
+  33% {
+    color: #aa32fa;
+  }
 
-    66% {
-        color: #fa3271;
-    }
+  66% {
+    color: #fa3271;
+  }
 
-    100% {
-        color: #3455eb;
-    }
+  100% {
+    color: #3455eb;
+  }
 }
 
 @keyframes svg-anim {
-    0% {
-        fill: #3455eb;
-    }
+  0% {
+    fill: #3455eb;
+  }
 
-    33% {
-        fill: #aa32fa;
-    }
+  33% {
+    fill: #aa32fa;
+  }
 
-    66% {
-        fill: #fa3271;
-    }
+  66% {
+    fill: #fa3271;
+  }
 
-    100% {
-        fill: #3455eb;
-    }
+  100% {
+    fill: #3455eb;
+  }
 }
 
 @keyframes card-anim {
-    0% {
-        background-color: #0c1335;
-    }
+  0% {
+    background-color: #0c1335;
+  }
 
-    33% {
-        background-color: #300e46;
-    }
+  33% {
+    background-color: #300e46;
+  }
 
-    66% {
-        background-color: #3b0c1b;
-    }
+  66% {
+    background-color: #3b0c1b;
+  }
 
-    100% {
-        background-color: #0c1335;
-    }
+  100% {
+    background-color: #0c1335;
+  }
 }
 
 * {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 300;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
 }
 
 .my-name {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .letter-fx {
-    animation: letter-anim 5s infinite;
+  animation: letter-anim 5s infinite;
 }
 
 ul {
-    list-style: square url(images/cursor-fill.svg) outside;
+  list-style: square url(images/cursor-fill.svg) outside;
 }
 
 p,
 li {
-    font-weight: 400;
-    font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 1.2rem;
 }
 
 a {
-    font-weight: 400;
-    text-decoration: none;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 label {
-    font-weight: 400;
+  font-weight: 400;
 }
 
-
 #welcome-message {
-    margin: 0 2rem;
-    background-color: #fa3271;
-    border-radius: 0 0 2rem 2rem;
+  margin: 0 2rem;
+  background-color: #fa3271;
+  border-radius: 0 0 2rem 2rem;
 }
 
 #welcome-message p {
-    text-align: center;
-    color: white;
-    font-weight: 400;
-    margin: 0;
-    padding: 0.5rem;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  margin: 0;
+  padding: 0.5rem;
 }
 
 #header {
-    margin-top: 3rem;
+  margin-top: 3rem;
+}
 
-    >* {
-        margin: 1.5rem;
-    }
+#header>* {
+  margin: 1.5rem;
 }
 
 .section-header {
-    padding: 1rem;
-    color: #ffffff;
-    font-size: 1.5rem;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 1.5rem;
 }
 
 #footer {
-    padding: 0.6rem;
-    color: #ffffff;
-    font-size: 1rem;
-    z-index: 1;
-    position: fixed;
-    bottom: 0;
+  padding: 0.6rem;
+  color: #ffffff;
+  font-size: 1rem;
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
 }
 
-#notes-carousel {
-    .carousel-item {
-        height: 300px;
+#notes-carousel .carousel-item {
+  height: 300px;
+}
 
-        img {
-            height: 300px;
-            object-fit: cover;
-        }
-    }
+#notes-carousel .carousel-item img {
+  height: 300px;
+  object-fit: cover;
 }
 
 #main-image-fg {
-    height: 300px;
-    border-bottom: 5px solid #dddddd;
-    margin-bottom: 2rem;
+  height: 300px;
+  border-bottom: 5px solid #dddddd;
+  margin-bottom: 2rem;
 }
 
 .svg-animated {
-    animation: svg-anim 5s infinite;
+  animation: svg-anim 5s infinite;
 }
 
 #notes {
-    padding: 0;
+  padding: 0;
+}
 
-    p {
-        padding: 0.8rem;
-        color: #ffffff;
-    }
+#notes p {
+  padding: 0.8rem;
+  color: #ffffff;
 }
 
 #contact-row {
-    padding: 0.8rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #777777;
-
-    svg {
-        fill: #777777;
-        width: 20px;
-        height: 20px;
-    }
-
-    p {
-        display: inline;
-    }
+  padding: 0.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #777777;
 }
 
-#showcase-grid {
-    .col {
-        margin: 1em;
-        padding: 1em;
-        border-radius: 0.5em;
-        color: #ffffff;
-        animation: card-anim 5s infinite;
-        min-width: 200px;
-    }
+#contact-row svg {
+  fill: #777777;
+  width: 20px;
+  height: 20px;
+}
 
-    .grid-title {
-        font-weight: 600;
-    }
+#contact-row p {
+  display: inline;
+}
 
-    svg {
-        width: 20px;
-        height: 20px;
-        fill: #ffffff;
-        margin-bottom: 1em;
-    }
+#showcase-grid .col {
+  margin: 1em;
+  padding: 1em;
+  border-radius: 0.5em;
+  color: #ffffff;
+  animation: card-anim 5s infinite;
+  min-width: 200px;
+}
+
+#showcase-grid .grid-title {
+  font-weight: 600;
+}
+
+#showcase-grid svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+  margin-bottom: 1em;
 }
 
 #responsibilities {
-    margin: 1rem 0;
+  margin: 1rem 0;
+}
 
-    .level-2-list {
-        color: #555555;
-        list-style: none none outside;
-        margin-bottom: 1rem;
-    }
+#responsibilities .level-2-list {
+  color: #555555;
+  list-style: none none outside;
+  margin-bottom: 1rem;
 }
 
 .card {
-    display: flex;
-    flex-direction: row;
-    border: none;
-    margin: 1em;
+  display: flex;
+  flex-direction: row;
+  border: none;
+  margin: 1em;
+}
 
-    >* {
-        padding: 1em;
-        border-radius: 1em;
-        border: 1px solid #aaaaaa;
-    }
+.card>* {
+  padding: 1em;
+  border-radius: 1em;
+  border: 1px solid #aaaaaa;
+}
 
-    .card-index {
-        min-width: 100px;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 1rem;
+.card .card-index {
+  min-width: 100px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
 
-        p {
-            font-family: 'Inconsolata', Courier, monospace;
-            font-size: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-    }
+.card .card-index p {
+  font-family: "Inconsolata", Courier, monospace;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
 
-    .card-body:not(:first-child) {
-        margin-top: 0;
-    }
+.card .card-body:not(:first-child) {
+  margin-top: 0;
+}
 
-    .card-title {
-        font-weight: 600;
-    }
+.card .card-title {
+  font-weight: 600;
+}
 
-    .card-date {
-        color: #aaa;
-    }
+.card .card-date {
+  color: #aaa;
 }
 
 .form-content {
-    margin: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
+}
 
-    p {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        color: #ff0000;
-        display: none;
-    }
+.form-content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ff0000;
+  display: none;
 }
 
 .skill-rating {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .skill-box {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
+}
 
-    p {
-        display: inline;
-        margin: 0;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 0 5px #00000077;
-        border: 2px solid #ffffff11;
-    }
+.skill-box p {
+  display: inline;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4666666667);
+  border: 2px solid rgba(255, 255, 255, 0.0666666667);
+}
 
-    svg {
-        margin: 0.8rem;
-        margin-right: 0.1rem;
-        padding: 0;
-    }
+.skill-box svg {
+  margin: 0.8rem;
+  margin-right: 0.1rem;
+  padding: 0;
 }
 
 .skill-title {
-    font-weight: 400;
-    font-size: 1.3rem;
-    font-family: 'Inconsolata', Courier, monospace;
-    margin: 0;
-    padding: 0;
+  font-weight: 400;
+  font-size: 1.3rem;
+  font-family: "Inconsolata", Courier, monospace;
+  margin: 0;
+  padding: 0;
 }
 
 .res-progress {
-    margin: 1rem 0;
-    height: 2rem;
-    width: 90%;
-    border: 2px solid #bbbbbb;
+  margin: 1rem 0;
+  height: 2rem;
+  width: 90%;
+  border: 2px solid #bbbbbb;
+}
 
-    .progress-bar {
-        font-weight: 600;
-        font-size: 1rem;
-        background-color: #333333;
-    }
+.res-progress .progress-bar {
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: #333333;
 }
 
 .achieve-item {
-    margin: 1rem 0;
-    padding: 0.5rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
 }
 
 .achieve-meta {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .achieve-type {
-    pointer-events: none;
+  pointer-events: none;
+}
 
-    svg {
-        width: 20px;
-        height: 20px;
-        fill: #ffffff;
-        margin-bottom: 0.2rem;
-    }
+.achieve-type svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+  margin-bottom: 0.2rem;
 }
 
 #login-btn {
-    position: absolute;
-    right: 0;
-    margin-right: 1rem;
+  position: absolute;
+  right: 0;
+  margin-right: 1rem;
 }
 
 #struct-heading {
-    font-weight: 600;
-    color: #0d6efd;
+  font-weight: 600;
+  color: #0d6efd;
 }
 
 #struct-heading,
 .struct-subtitle {
-    text-align: center;
-    padding: 0;
-    margin: 1rem;
+  text-align: center;
+  padding: 0;
+  margin: 1rem;
 }
 
 .struct-container {
-    border-radius: 1em;
-    border: 1px solid #aaaaaa;
-    padding: 1rem;
-    margin: 0 300px;
+  border-radius: 1em;
+  border: 1px solid #aaaaaa;
+  padding: 1rem;
+  margin: 0 300px;
+}
 
-    * {
-        font-size: 1.2rem;
-        font-family: 'Inconsolata', Courier, monospace;
-    }
+.struct-container * {
+  font-size: 1.2rem;
+  font-family: "Inconsolata", Courier, monospace;
+}
 
-    #struct-header,
-    .struct-member,
-    #struct-footer {
-        display: flex;
-        align-items: center;
+.struct-container #struct-header,
+.struct-container .struct-member,
+.struct-container #struct-footer {
+  display: flex;
+  align-items: center;
+}
 
-        * {
-            margin: 0.5rem;
-        }
+.struct-container #struct-header *,
+.struct-container .struct-member *,
+.struct-container #struct-footer * {
+  margin: 0.5rem;
+}
 
-        p {
-            padding: 0;
-        }
-    }
+.struct-container #struct-header p,
+.struct-container .struct-member p,
+.struct-container #struct-footer p {
+  padding: 0;
+}
 
-    #struct-content {
-        margin-left: 2rem;
-    }
+.struct-container #struct-content {
+  margin-left: 2rem;
+}
 
-    #compile-struct {
-        font-family: 'Source Sans Pro', sans-serif;
-    }
+.struct-container #compile-struct {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 #memory-container {
-    min-height: 200px;
-    display: flex;
-    flex-wrap: wrap;
+  min-height: 200px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #memory-error {
-    color: red;
+  color: red;
 }
 
 .memory-member {
-    height: 50px;
-    width: 50px;
-    margin: 0.2em;
-    border-radius: 0.3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 50px;
+  width: 50px;
+  margin: 0.2em;
+  border-radius: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .memory-member-name {
-        margin: 0;
-        padding: 0;
-        color: white;
-        font-weight: bold;
-    }
+.memory-member .memory-member-name {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-weight: bold;
+}
 
-    .memory-member-tooltip {
-        visibility: hidden;
-        width: 120px;
-        background-color: black;
-        color: #fff;
-        text-align: center;
-        padding: 5px 0;
-        border-radius: 6px;position: absolute;
-        z-index: 1;
-    }
+.memory-member .memory-member-tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+}
 
-    :hover .memory-member-tooltip {
-        visibility: visible;
-    }
+.memory-member :hover .memory-member-tooltip {
+  visibility: visible;
 }
 
 .member-0 {
-    background-color: #3455eb;
+  background-color: #3455eb;
 }
 
 .member-1 {
-    background-color: #aa32fa;
+  background-color: #aa32fa;
 }
 
 .member-2 {
-    background-color: #fa3271;
+  background-color: #fa3271;
 }
 
 @media (max-width: 1200px) {
-    #header>* {
-        display: block;
-        margin: 0.5rem;
-    }
+  #header>* {
+    display: block;
+    margin: 0.5rem;
+  }
 
-    #my-name {
-        margin-bottom: 0rem;
-    }
+  #my-name {
+    margin-bottom: 0rem;
+  }
 
-    #contact-row p {
-        display: block;
-    }
+  #contact-row p {
+    display: block;
+  }
 
-    #responsibility-list,
-    #bio-list {
-        margin-right: 2rem;
-    }
+  #responsibility-list,
+  #bio-list {
+    margin-right: 2rem;
+  }
 
-    #footer {
-        text-align: center;
-    }
+  #footer {
+    text-align: center;
+  }
 }
 
 @media (max-width: 1140px) {
-    #showcase-grid .row {
-        display: block;
-        margin-right: 1.2rem;
-    }
+  #showcase-grid .row {
+    display: block;
+    margin-right: 1.2rem;
+  }
 }
 
 @media (max-width: 992px) {
-    #login-btn {
-        position: relative;
-        right: 0;
-        margin: 0.5rem 0;
-        width: 100px;
-    }
+  #login-btn {
+    position: relative;
+    right: 0;
+    margin: 0.5rem 0;
+    width: 100px;
+  }
 
-    .card .card-index {
-        display: none;
-    }
+  .card .card-index {
+    display: none;
+  }
 
-    .struct-container {
-        margin: 0 1rem;
-    }
+  .struct-container {
+    margin: 0 1rem;
+  }
 }
+
+#blog-wait-message {
+  margin: 1rem;
+}
+
+/*# sourceMappingURL=styles.scss.map */
